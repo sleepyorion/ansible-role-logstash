@@ -1,0 +1,10 @@
+
+- include: create_cert.yml
+- include: "Install_repo_{{ansible_os_family}}.yml"
+
+- name: Config Logstash service 
+  service:
+    name: logstash
+    enabled: yes
+    state: started
+  become: yes

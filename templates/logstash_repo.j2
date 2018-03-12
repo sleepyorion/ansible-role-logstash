@@ -1,0 +1,5 @@
+[logstash-{{ logstash_yum_version }}]
+name=Logstash repository for {{ logstash_yum_version }}.x packages
+baseurl=http://packages.elastic.co/logstash/{{ logstash_yum_version }}/centos
+gpgcheck=1
+gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch

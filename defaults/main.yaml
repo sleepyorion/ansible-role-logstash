@@ -1,0 +1,11 @@
+logstash_install_dir: /opt
+
+# the following versions are availble: 
+#   1.5,2.0,2.1,2.2,2.3,2.4,5.0,5.1,5.2,5.3,5.4,5.5,6.0,6.1,6.2
+logstash_yum_version: 6.2
+logstash_yum_url: http://packages.elasticsearch.org/logstash/{{logstash_yum_version}}/centos
+
+logstash_ssl_dir: /etc/pki/tls/logstash/certs
+logstash_ssl_certificate_file: logstash-forwarder-example.crt
+logstash_ssl_key_file: logstash-forwarder-example.key
+logstash_ssl_domain: CN=*.example.com

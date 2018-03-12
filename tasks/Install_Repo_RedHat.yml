@@ -1,0 +1,15 @@
+
+- name: Add Elasticsearch GPG key.
+  rpm_key:
+    key: http://packages.elasticsearch.org/GPG-KEY-elasticsearch
+    state: present
+  become: yes
+
+- name: create logstash repo
+  template: src=logstash_repo.j2 dest=/etc/yum.repos.d/logsash.repo
+            owner=root group=root mode=0644
+  become: yes
+
+- name: Install logstash
+  yum: pkg=logstash state=installed
+  become: yes
