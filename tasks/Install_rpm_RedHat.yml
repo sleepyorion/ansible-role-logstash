@@ -1,0 +1,5 @@
+
+- name: Install logstash
+  yum: name="{{ logstash_rpm_url }}" state=installed
+  become: yes
+  

@@ -1,6 +1,10 @@
 
-- include: create_cert.yml
-- include: "Install_repo_{{ansible_os_family}}.yml"
+- debug:
+    msg: "debug value === {{ logstash_install_method }}"
+
+- include_tasks: create_cert.yml
+
+- include: "Install_{{ logstash_install_method | lower }}_{{ansible_os_family}}.yml"
 
 - name: Config Logstash service 
   service:
